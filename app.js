@@ -9,19 +9,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
             Direccion = document.querySelector("#txtDireccionAlumno").value,
             Telefono = document.querySelector("#txtTelefonoAlumno").value;
             
-        var KeyCodigo = "Codigo"+Codigo;
-        var KeyNombre = "Nombre"+Codigo;
-        var KeyDireccion = "Direccion"+Codigo;
-        var KeyTelefono = "Telefono"+Codigo;
+        var CCodigo = "Codigo"+Codigo;
+        var CNombre = "Nombre"+Codigo;
+        var CDireccion = "Direccion"+Codigo;
+        var CTelefono = "Telefono"+Codigo;
 
         if('localStorage' in window){
-            window.localStorage.setItem(KeyCodigo, Codigo);
-            window.localStorage.setItem(KeyNombre, Nombre);
-            window.localStorage.setItem(KeyDireccion, Direccion);
-            window.localStorage.setItem(KeyTelefono, Telefono);
+            window.localStorage.setItem(CCodigo, Codigo);
+            window.localStorage.setItem(CNombre, Nombre);
+            window.localStorage.setItem(CDireccion, Direccion);
+            window.localStorage.setItem(CTelefono, Telefono);
         }
         else{
-            alert("No se pudo Guardar");
+            alert("No se pudo acceder al almacenamiento");
         }
     });
     document.querySelector("#btnRecuperarAlumno").addEventListener("click", (e) => {
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 document.querySelector("#txtTelefonoAlumno").value = window.localStorage.getItem("Telefono" + Codigo);
             }
             else{
-                alert("Agregue el codigo de los datos a recuperar");
+                alert("");
             }
         }
         else{
